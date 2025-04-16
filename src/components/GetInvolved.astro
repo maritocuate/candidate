@@ -1,0 +1,87 @@
+---
+const points = [
+  "Lorem suspendisse",
+  "Porta nibh venenatis cras",
+  "Mux mauris vitae",
+];
+---
+
+<section class="py-20 bg-gray-50" aria-labelledby="get-involved-heading" id="participa">
+  <div class="container mx-auto px-4">
+    <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div>
+        <p class="text-red-500 font-semibold mb-4">PARTICIPA</p>
+        <h2 class="text-4xl font-bold mb-8" id="get-involved-heading">
+          Todo por América. Todo por ti y tu familia.
+        </h2>
+        <ul class="space-y-4 mb-8" role="list">
+          {
+            points.map((point) => (
+              <li class="flex items-center gap-3" role="listitem">
+                <div class="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center" aria-hidden="true">
+                  <svg
+                    class="w-4 h-4 text-white"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </div>
+                <span>{point}</span>
+              </li>
+            ))
+          }
+        </ul>
+        <div class="flex gap-4">
+          <a href="#donate" class="bg-red-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-600 transition-colors" role="button">
+            Donar
+          </a>
+          <a href="#join" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors" role="button">
+            Únete a nuestro movimiento
+          </a>
+        </div>
+      </div>
+      <div class="relative">
+        <img
+          src="/flags.jpg"
+          alt="Banderas Americanas simbolizando patriotismo y unidad"
+          class="rounded-lg shadow-xl"
+          width="600" 
+          height="400"
+          loading="lazy"
+        />
+        <article class="absolute bottom-8 left-8 bg-white p-6 rounded-lg shadow-lg max-w-sm">
+          <blockquote>
+            <p class="text-gray-600 mb-4">
+              "Estamos aquí para ayudarte"
+            </p>
+            <p class="text-sm text-gray-500">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit nunc eu proin pernatus
+              arca eros est vel elit dia.
+            </p>
+          </blockquote>
+          <div class="flex items-center gap-3 mt-4">
+            <img
+              src="/thumbnail.png"
+              alt="Foto de Marcelo Peretta"
+              class="w-12 h-12 rounded-full"
+              width="48"
+              height="48"
+              loading="lazy"
+            />
+            <div>
+              <p class="font-semibold">Marcelo Peretta</p>
+              <p class="text-sm text-gray-500">Senador de California</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>

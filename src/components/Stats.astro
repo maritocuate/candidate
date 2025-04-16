@@ -1,0 +1,44 @@
+---
+const stats = [
+  { number: "520,000+", label: "Votantes activos", icon: "/voters.png" },
+  { number: "25,000+", label: "Voluntarios", icon: "/volunteers.png" },
+  { number: "175+", label: "Días en campaña", icon: "/campaign.png" },
+  { number: "35,000+", label: "Donantes", icon: "/donors.png" },
+];
+---
+
+<section class="py-20" aria-labelledby="stats-heading" id="estadisticas">
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-12">
+      <p class="text-red-500 font-semibold mb-4">ÚNETE A NUESTRO MOVIMIENTO</p>
+      <h2 class="text-4xl font-bold" id="stats-heading">Tenemos una gran comunidad comprometida</h2>
+      <p class="text-gray-600 mt-4">
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit solo sem aliquae
+        eras orci mi gravida libero feugiat dia aliquit el."
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-4 gap-8" role="list">
+      {
+        stats.map((stat) => (
+          <div class="text-center" role="listitem">
+            <div class="w-20 h-20 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
+              <img src={stat.icon} alt={`Ícono de ${stat.label}`} class="w-10 h-10" width="40" height="40" />
+            </div>
+            <h3 class="text-3xl font-bold mb-2">{stat.number}</h3>
+            <p class="text-gray-600">{stat.label}</p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="flex justify-center gap-4 mt-12">
+      <a href="#donate" id="donate" class="bg-red-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-600 transition-colors" role="button">
+        Donar
+      </a>
+      <a href="#join" id="join" class="bg-blue-600 text-white px-6 py-3 rounded-lg font-medium hover:bg-blue-700 transition-colors" role="button">
+        Únete a nuestro movimiento
+      </a>
+    </div>
+  </div>
+</section>
