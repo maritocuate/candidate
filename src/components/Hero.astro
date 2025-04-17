@@ -19,11 +19,14 @@ import Navbar from './Navbar.astro';
         <p class="text-gray-300 mb-8">
           Doctor. Sindicalista. Político.
         </p>
-        <div class="flex gap-4">
-          <a href="#donate" class="bg-white text-[#2B3990] px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors" role="button">
+        <div class="flex flex-wrap gap-4">
+          <a href="#estadisticas" class="smooth-scroll bg-red-500 text-white px-6 py-3 rounded-lg font-medium hover:bg-red-600 transition-colors" role="button">
+            Sobre mí
+          </a>
+          <a href="#donate" class="bg-white text-[#2B3990] px-6 py-3 rounded-lg font-medium hover:bg-gray-100 transition-colors smooth-scroll" role="button">
             Donar
           </a>
-          <a href="#join" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors" role="button">
+          <a href="#join" class="border-2 border-white text-white px-6 py-3 rounded-lg font-medium hover:bg-white/10 transition-colors smooth-scroll" role="button">
             Únete a nuestra comunidad
           </a>
         </div>
@@ -41,3 +44,28 @@ import Navbar from './Navbar.astro';
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const smoothScrollLinks = document.querySelectorAll<HTMLAnchorElement>('.smooth-scroll');
+    
+    smoothScrollLinks.forEach(link => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        
+        const targetId = link.getAttribute('href');
+        if (!targetId) return;
+        
+        const targetElement = document.querySelector<HTMLElement>(targetId);
+        
+        if (targetElement) {
+          // Scroll suave hasta el elemento
+          targetElement.scrollIntoView({ 
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  });
+</script>
